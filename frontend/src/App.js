@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState,} from 'react';
 import './App.css';
 import axios from 'axios';
 
-function App() {
+export default function App() {
   const [campos, setCampos] = useState({
       nome: '',
       email: '',
@@ -20,7 +20,7 @@ function App() {
   function send(){
     const formData = new FormData();
     Object.keys(campos).forEach(key => formData.append(key, campos[key]));
-    axios.post('http://localhost:3030/send', 
+    axios.post('https://formulario-de-envio-email.herokuapp.com/send', 
               formData,
               {
                 headers: {
@@ -57,4 +57,4 @@ function App() {
   );
 }
 
-export default App;
+
